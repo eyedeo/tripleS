@@ -1,5 +1,6 @@
 let happiness = 0;
 let level = 0;
+let money = 0;
 
 // Function to create and append the character image
 function createCharacterImage() {
@@ -181,14 +182,13 @@ function taskEntered(taskName, taskTime) {
     checkButton.addEventListener('click', () => {
         clearInterval(timerInterval); // Stop the timer
         incrementProgressBar();
+        incrementMoney();
         newTaskContainer.remove(); // Remove the task container
     });
 
     taskInputContainer.remove(); // Removes the input container
     taskContainer.insertBefore(newTaskContainer, button);
 }
-<<<<<<< HEAD
-=======
 
 function incrementProgressBar() {
     const progressBar = document.querySelector('.progress-bar');
@@ -205,4 +205,11 @@ function incrementProgressBar() {
         console.log(happiness)
     }
 }
->>>>>>> 6c3f1756c11cba126d57eff2b880b2eab0a5a089
+
+function incrementMoney() {
+    const moneyCount = document.querySelector('.money-count');
+    
+    money += 20;
+
+    moneyCount.textContent = `Money: ${money}`; // Using template literals
+}

@@ -36,7 +36,6 @@ body {
     padding: 10px;
     border-radius: 5px;
     height: 74vh;
-    
 }
 
 .screen-image {
@@ -90,7 +89,7 @@ body {
     color: blue;
     border-radius: 5px;
     border-color: blue;
-    background-color: #00000;
+    background-color: #ffffff;
 }
 
 .task-input-container {

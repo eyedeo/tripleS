@@ -21,7 +21,7 @@ function createCharacterImage() {
     if(level==2){
         charimg.src = 'assets/tammyneutral.png'; //happiness lvl 2
     }
-    if(lvl>=3){
+    if(level>=3){
         charimg.src = 'assets/tammyhappy.png'; //happiness lvl 3
     }
     // Set styling properties
@@ -133,7 +133,7 @@ function updateAccessoryPosition(charimg) {
 // Function to update money display
 function updateMoneyDisplay() {
     const moneyCount = document.querySelector('.money-count');
-    moneyCount.textContent = `Taskbucks: ${money}`; // Using template literals
+    moneyCount.textContent = `Money: ${money}`; // Using template literals
 }
 
 // The rest of the code remains unchanged
@@ -229,7 +229,7 @@ function taskEntered(taskName, taskTime) {
     newTaskContainer.classList.add("new-task-container");
 
     // Sets the name of the new task
-    const newTaskName = document.createElement("div");
+    const newTaskName = document.createElement("p");
     newTaskName.textContent = taskName; // Use textContent for <p> elements
     newTaskName.classList.add("new-task-name");
     newTaskContainer.appendChild(newTaskName);

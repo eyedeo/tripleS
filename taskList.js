@@ -16,7 +16,6 @@ function createCharacterImage() {
     // Animation variables
     let position = 650; // Initial position
     let direction = 1; // 1 for right, -1 for left
-    const moveDistance = 700; // Distance to move before reversing direction
     let reverseCount = 0; // Count how many times the image has reversed direction
 
     // Animation function
@@ -60,7 +59,16 @@ function createCharacterImage() {
 
 // Function to create a new task input box
 function createNewTaskInput() {
+    let existingContainer = document.querySelector('.new-task-container');
+    
+    if (existingContainer) {
+        // If it exists, return it without creating a new one
+        return existingContainer;
+    }
+
+    // Create a new task container
     const newTaskContainer = document.createElement('div');
+    
     const taskName = document.createElement('input'); 
     const taskTime = document.createElement('input'); 
     
@@ -70,10 +78,22 @@ function createNewTaskInput() {
 
     taskName.type = 'text';
     taskName.placeholder = "Task name:";
-
     taskTime.type = 'text';
     taskTime.placeholder = "Time limit (minutes):";
 
+    // Add event listener for Enter key on taskName
+    taskName.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            taskEntered(taskName.value, taskTime.value);
+        }
+    });
+
+    // Add event listener for Enter key on taskTime
+    taskTime.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            taskEntered(taskName.value, taskTime.value);
+        }
+    });
 
     newTaskContainer.appendChild(taskName);
     newTaskContainer.appendChild(taskTime); 
@@ -108,3 +128,24 @@ function initializePage() {
 
 // Run the initializePage function when the page loads
 window.onload = initializePage;
+
+function taskEntered(taskName, taskTime) {
+    const newTaskContainer = document.querySelector('.new-task-container');
+    const taskContainer = document.querySelector('.tasks-container');
+    const button = document.querySelector('.add-new-task');
+
+    const task = document.createElement('div');
+    task.classList.add("new-task");
+
+    // Create a <p> element instead of a <textarea>
+    const newTaskName = document.createElement("p");
+    newTaskName.textContent = taskName; // Use textContent for <p> elements
+    
+    newTaskName.classList.add("new-task-name");
+
+    task.appendChild(newTaskName);
+
+    newTaskContainer.remove(); // Removes the input container
+
+    taskContainer.insertBefore(task, button);
+}

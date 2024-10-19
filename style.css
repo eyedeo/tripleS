@@ -90,16 +90,17 @@ body {
 
 .new-task-container {
     background-color: red;
-    padding: 10px;
+    padding: 30px;
     margin-top: 10px;
     display: flex;
     width: 20vw;
+
 }
 
 .task-name {
     width: 50%;
-    padding: 2px;
-    margin-right: 2px;
+    padding: 10px;
+    margin-right: 5px;
 }
 
 .task-time {
@@ -159,3 +160,6 @@ body {
     width: 20%;
 }
 
+.new-task {
+    
+}

@@ -30,7 +30,7 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-.Screen-Container {
+.screen-container {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ body {
     height: 20%;
 
 }
-.Title-Box {
+.title-box {
     background-color: #5fcf80;
     padding-top: 10px;
     text-align: center;
@@ -58,7 +58,7 @@ body {
     border-radius: 5px;
     color: white;
 }
-.Screen {
+.screen {
     display: flex;
     justify-content: center;
     align-items: center;

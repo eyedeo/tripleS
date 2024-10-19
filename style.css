@@ -11,6 +11,19 @@ body {
     overflow-x: hidden;
 }
 
+.task-list-title {
+   font-size: 24px;
+   width: 20vw;
+   max-width: 80%;
+   background-color: #ffffff;
+   margin: 10px 0;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   text-align: center;
+   user-select: none;
+}
+
+
 .tasks-container {
     display: flex;
     flex-direction: column;
@@ -19,6 +32,7 @@ body {
     max-width: 20%;
     height: 100%;
     background-color: #f8f9fa;
+    user-select: none;
 }
 
 .task-box {
@@ -29,7 +43,6 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
 }
 
 .screen-container {
@@ -39,6 +52,7 @@ body {
     width: 80%;
     background-color: aquamarine;
     padding: 20px;
+    user-select: none;
     margin-top: 20px;
     border-radius: 5px;
     gap: 20px; /* Adds space between flex children */
@@ -116,4 +130,5 @@ body {
     border-radius: 5px;
     justify-content: space-between; 
     color: white;
+    user-select: none;
 }

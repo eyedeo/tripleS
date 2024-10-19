@@ -13,8 +13,8 @@ body {
 
 .task-list-title {
     font-size: 24px;
-    width: 20vw;
-    max-width: 80%;
+    width: 100%;
+    max-width: 20vw;
     background-color: #ffffff;
     margin-top: 10px;
     border: 1px solid #ddd;
@@ -90,11 +90,12 @@ body {
     padding: 10px;
     border-radius: 5px;
     height: 74vh;
+    
 }
 
 .screen-image {
-    width: 150vh;
-    height: 65vh;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
 }
 
@@ -106,14 +107,14 @@ body {
     display: flex;
     flex-direction: columns;
     justify-content: left;
-}
-
-.add-new-task {
     width: auto;
     height: auto;
 }
 
+.plus-container {
+    padding: 10px;
+}
 .plus {
-    width: 50%;
-    height: 100%;
+    max-width: 20px;
+    max-height: 20px;
 }

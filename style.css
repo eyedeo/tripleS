@@ -12,15 +12,15 @@ body {
 }
 
 .task-list-title {
-   font-size: 24px;
-   width: 20vw;
-   max-width: 80%;
-   background-color: #ffffff;
-   margin: 10px 0;
-   border: 1px solid #ddd;
-   border-radius: 5px;
-   text-align: center;
-   user-select: none;
+    font-size: 24px;
+    width: 20vw;
+    max-width: 80%;
+    background-color: #ffffff;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
 }
 
 
@@ -96,24 +96,26 @@ body {
 .button-box {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Pushes buttons to the bottom */
+    justify-content: space-between; /* Pushes buttons to the bottom */
     width: 100%;
 }
 
 .buttons-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 10px;
 }
 
 .button {
-    padding: 10px;
+    padding: 20px;
     background-color: #ff8c00;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 30px;
 }
 
 .button:hover {

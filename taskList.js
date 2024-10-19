@@ -3,6 +3,8 @@ let level = 1;
 let money = 0;
 let accessory; // Variable to hold the accessory image
 let currentAccessory; // Store the current accessory path
+const screen = document.querySelector('.screen');
+
 
 // Array of accessory paths
 const accessories = [
@@ -170,9 +172,9 @@ function createNewTaskInput() {
     taskTime.classList.add("task-time");
 
     taskName.type = 'text';
-    taskName.placeholder = "Task name:";
+    taskName.placeholder = "Task name";
     taskTime.type = 'text';
-    taskTime.placeholder = "Time limit (mins):";
+    taskTime.placeholder = "Time limit (mins)";
 
     // Add event listener for Enter key on taskName
     taskName.addEventListener('keydown', function(event) {

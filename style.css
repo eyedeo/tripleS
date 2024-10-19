@@ -198,19 +198,34 @@ progress::-moz-progress-bar {
 }
 
 .new-task-timer {
-    margin-left: 10px; /* Optional: Add space between task name and timer */
     font-size: 18px; /* Adjust the font size as needed */
     color:#0005a7;
     background-color: #a5e1cf;
     border-radius: 5px;
-    
+    padding: 10px;
+    font-size: 14px;
+    width: 20%;
+    margin-right: 5px;
+    text-align: center;
 }
 
 .new-task-name {
     border-radius: 5px;
     color: #0005a7;
     background-color: #a5e1cf;
-    padding:20px;
+    padding:10px;
+    font-size: 14px;
+    width: 60%;
+    margin-right: 5px;
+}
+
+.new-check-button {
+    border: none;
+    border-radius: 5px;
+    background-color: #a5e1cf;
+    color:#0005a7;
+    width: 10%;
+    padding:10px;
 }
 
 
@@ -235,6 +250,7 @@ progress::-moz-progress-bar {
     background-color: #a5e1cf; /* Change to transparent or remove if not needed */
     color:#0005a7;
     padding: 10px;
+    
 }
 
 .task-name::placeholder {
@@ -245,9 +261,3 @@ progress::-moz-progress-bar {
     color:#0005a7;
 }
 
-.new-check-button {
-    border: none;
-    border-radius: 5px;
-    background-color: #a5e1cf;
-    color:#0005a7;
-}

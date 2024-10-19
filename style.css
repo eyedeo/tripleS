@@ -90,8 +90,8 @@ body {
 }
 
 .screen-image {
-    width: 65%;
-    height: 40vh;
+    width: auto;
+    height: 45vh;
     border-radius: 5px;
 }
 

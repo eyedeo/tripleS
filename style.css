@@ -16,7 +16,7 @@ body {
     width: 20vw;
     max-width: 80%;
     background-color: #ffffff;
-    margin: 10px 0;
+    margin-top: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
@@ -61,6 +61,7 @@ body {
 
 .screen-title-container {
     display: flex;
+    padding-top: 10px;
     flex-direction: column;
     width: 100%;
     height: auto; 
@@ -95,7 +96,6 @@ body {
 .button-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes buttons to the bottom */
     width: 100%;
 }
 

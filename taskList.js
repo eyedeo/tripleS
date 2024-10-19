@@ -22,14 +22,10 @@ function changebuttons(buttoncount){
         console.log(currenttask)
         console.log(buttonlayouts[currenttask][i])
         newbutton.textContent = buttonlayouts[currenttask][i] // add the text to the button which is assoicated with the current task
-        // newbutton.addEventListener("click",function(event){
         
-        // })
 
         buttons.push(newbutton) // updates array holding buttons
         buttoncontainer.appendChild(newbutton) // adds the button to the container
-        //console.log(buttoncontainer)
-        //console.log(newbutton)
     }
 
 }
@@ -52,3 +48,24 @@ tasks.forEach(function(x){
 
     })
 })
+
+
+// Making tasks appear every 6 seconds
+const container = document.getElementById('tasks-container');
+
+let taskTypes = ["Do Laundry", "Clean Room", "Die"];
+
+function addElement() {
+    const newElement = document.createElement('div');
+    newElement.classList.add("task-box");
+    
+    // Get a random task from the taskTypes array
+    const randomIndex = Math.floor(Math.random() * taskTypes.length);
+    newElement.textContent = taskTypes[randomIndex]; // Set the text to a random task
+
+    
+    container.appendChild(newElement);
+}
+
+// Call addElement every 6 seconds (6000 milliseconds)
+setInterval(addElement, 3000);

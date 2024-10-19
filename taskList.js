@@ -15,8 +15,15 @@ const accessories = [
 // Function to create and append the character image
 function createCharacterImage() {
     const charimg = document.createElement('img');
-    charimg.src = 'assets/tammy.png'; // Image path
-
+    if(level<2){ 
+        charimg.src = 'assets/tammy.png'; //happiness lvl 0 
+    }
+    if(level==2){
+        charimg.src = 'assets/tammyneutral.png'; //happiness lvl 2
+    }
+    if(lvl>=3){
+        charimg.src = 'assets/tammyhappy.png'; //happiness lvl 3
+    }
     // Set styling properties
     charimg.style.position = 'fixed';
     charimg.style.left = '45%';
@@ -46,7 +53,15 @@ function createCharacterImage() {
 
     // Animation function
     function animate() {
-        charimg.src = 'assets/tammy.png';
+    if(level<2){ 
+        charimg.src = 'assets/tammy.png'; //happiness lvl 0 
+    }
+    if(level==2){
+        charimg.src = 'assets/tammyneutral.png'; //happiness lvl 2
+    }
+    if(level>=3){
+        charimg.src = 'assets/tammyhappy.png';
+    }
         position += 5 * direction; // Move based on direction
         charimg.style.left = position + 'px'; // Update position
 

@@ -2,6 +2,7 @@ const addNewTaskButton = document.getElementById('add-new-task');
 const taskContainer = document.getElementById('tasks-container');
 
 
+// Creating guy when website loads
 window.onload = function() {
     //character image element
     const charimg = document.createElement('img');
@@ -18,7 +19,6 @@ window.onload = function() {
     document.body.appendChild(charimg);
 };
 
-
 addNewTaskButton.addEventListener('click', function() {
     // Create a new text box (input element)
     const newTask = document.createElement('input');
@@ -29,4 +29,3 @@ addNewTaskButton.addEventListener('click', function() {
     taskContainer.insertBefore(newTask, addNewTaskButton);
 
 });
-

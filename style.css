@@ -44,13 +44,12 @@ body {
     height: 100%;
     border-radius: 5px;
 }
+
 .task-list-title {
     font-size: 24px;
     width: 100%;
     max-width: 20vw;
-    background-color: #ffffff;
     margin-top: 10px;
-    border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
     user-select: none;
@@ -87,6 +86,24 @@ body {
     margin-top: 10px;
     width: auto;
     height: auto;
+}
+
+.new-task-container {
+    background-color: red;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    width: 20vw;
+}
+
+.task-name {
+    width: 50%;
+    padding: 2px;
+    margin-right: 2px;
+}
+
+.task-time {
+    width: 50%;
 }
 
 .plus-container {
@@ -141,3 +158,4 @@ body {
     background-color: red;
     width: 20%;
 }
+

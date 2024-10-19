@@ -60,12 +60,25 @@ function createCharacterImage() {
 
 // Function to create a new task input box
 function createNewTaskInput() {
-    const newTask = document.createElement('input');
+    const newTaskContainer = document.createElement('div');
+    const taskName = document.createElement('input'); 
+    const taskTime = document.createElement('input'); 
     
-    newTask.type = 'text'; // Set the type to text
-    newTask.placeholder = 'Enter your task here...'; // Set placeholder text
-    
-    return newTask;
+    newTaskContainer.classList.add("new-task-container");
+    taskName.classList.add("task-name");
+    taskTime.classList.add("task-time");
+
+    taskName.type = 'text';
+    taskName.placeholder = "Task name:";
+
+    taskTime.type = 'text';
+    taskTime.placeholder = "Time limit (minutes):";
+
+
+    newTaskContainer.appendChild(taskName);
+    newTaskContainer.appendChild(taskTime); 
+
+    return newTaskContainer;
 }
 
 // Function to add the new task input box to the DOM

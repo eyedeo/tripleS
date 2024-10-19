@@ -6,7 +6,6 @@ body {
     margin: 0;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -16,22 +15,19 @@ body {
     display: flex;
     flex-direction: column;
     width: 80%;
-    background-color: turquoise;
     padding: 20px;
     user-select: none;
     margin-top: 20px;
     border-radius: 5px;
     gap: 20px; /* Adds space between flex children */
+    background-color: #0005a7;
 }
-
-
 
 .screen {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
-    background-color: #0005a7;
+    flex-direction: column;
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -52,27 +48,26 @@ body {
     border-radius: 5px;
     text-align: center;
     user-select: none;
-    color:blue;
+    color:#0005a7;
 }
 
 .tasks-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    padding: 30px;
     width: 20vw;
     max-width: 20%;
     height: 100%;
-    background-color: #f8f9fa;
     user-select: none;
-    
+    border-right: solid;
+    background-color: #a5e1cf;
 }
 
 .task-box {
     width: 20vw;
     max-width: 80%;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    border: 1px solid;
     border-radius: 5px;
     text-align: center;
     padding: 10px;
@@ -81,34 +76,35 @@ body {
 
 .add-new-task {
     display: flex;
-    flex-direction: columns;
+    flex-direction: column;
     justify-content: left;
     margin-top: 10px;
-    width: auto;
+    
     height: auto;
-    color: blue;
+    border: none; /* Remove the border */
+    box-shadow: none; /* Ensure no box shadow */
+    outline: none; /* Remove the outline when focused */
+    cursor: pointer; /* Change cursor to pointer */
     border-radius: 5px;
-    border-color: blue;
-    background-color: #ffffff;
+    background-color: #0005a7;
+    color:  #a5e1cf;
+}
+
+.add-new-task:hover {
+    border-radius: 5px;
+    background-color: #a5e1cf;
+    border: solid #0005a7;
+    color:#0005a7;
 }
 
 .task-input-container {
-    background-color:blue; 
-    border-radius: 195px;
+    border-radius: 5px;
     padding: 30px;
     margin-top: 10px;
     display: flex;
-    width: 17vw;
-}
-
-.task-name {
-    width: 50%;
-    padding: 10px;
-    margin-right: 5px;
-}
-
-.task-time {
-    width: 50%;
+    width: 85%;
+    border: solid #0005a7;
+    background-color: #0005a7;
 }
 
 .plus-container {
@@ -119,18 +115,17 @@ body {
     max-width: 20px;
     max-height: 20px;
 }
-
 .title-box {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between; /* Ensures the space between items is distributed */
-    background-color: #0215a3;
     text-align: center;
     font-size: 24px;
     border-radius: 5px;
     height: 20vh;
     padding: 0 10px; /* Add some padding for spacing */
+    background-color: #a5e1cf;
 }
 
 .progress-bar-container {
@@ -138,12 +133,13 @@ body {
     display: flex;
     flex-direction: column; /* Change to column to stack the label above the bar */
     align-items: center; /* Center align the label and progress bar */
+    padding: 10px;
 }
 
 .progress-bar-label {
-    color:white;
     width: 100%; /* Optional: makes the label the same width as the progress bar */
     text-align: center; /* Center the label text */
+    color:#0005a7;
 }
 
 .progress-bar {
@@ -161,33 +157,74 @@ body {
 
 .money-count {
     width: 20%;
-    color:white;
+    padding: 10px;
+    color:#0005a7;
 }
 
 .new-task-container {
-    background-color: #597ccf;
-    border-radius: 5%;
-    border-style:solid;
-    border-color:blue;
+   border-radius: 5px;
     padding: 30px;
     margin-top: 10px;
     display: flex;
     justify-content: space-between; /* Space out children */
     align-items: center; /* Center align items vertically */
     width: 15vw; 
+    background-color: #0005a7;
+
 }
 
 .new-task-timer {
     margin-left: 10px; /* Optional: Add space between task name and timer */
     font-size: 18px; /* Adjust the font size as needed */
-    color: blue; /* Change the color for visibility */
+    width: 100%;
+    color:#0005a7;
+    background-color: #a5e1cf;
+    border-radius: 5px;
 }
 
 .new-task-name {
-    color: blue;
+    border-radius: 5px;
+    color: #0005a7;
+    background-color: #a5e1cf;
 }
 
 .new-check-button {
     width: 40px;
     height: 40px;
+}
+
+.task-name {
+    width: 100%;
+    padding: 10px;
+    margin-right: 5px;
+    border: #a5e1cf; /* Remove border */
+    border-radius: 5px;
+    outline: none; /* Remove outline when focused */
+    box-shadow: none; /* Remove any box shadow */
+    background-color: #a5e1cf; /* Change to transparent or remove if not needed */
+    color:#0005a7;
+}
+
+.task-time {
+    width: 50%;
+    border: none; /* Remove border */
+    border-radius: 5px;
+    outline: none; /* Remove outline when focused */
+    box-shadow: none; /* Remove any box shadow */
+    background-color: #a5e1cf; /* Change to transparent or remove if not needed */
+    color:#0005a7;
+}
+
+.task-name::placeholder {
+    color:#0005a7;
+}
+
+.task-time::placeholder {
+    color:#0005a7;
+}
+
+.new-check-button {
+    border: none;
+    border-radius: 5px;
+    background-color: #a5e1cf;
 }

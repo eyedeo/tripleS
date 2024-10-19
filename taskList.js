@@ -1,5 +1,5 @@
 let happiness = 0;
-let level = 0;
+let level = 1;
 let money = 0;
 let accessory; // Variable to hold the accessory image
 let currentAccessory; // Store the current accessory path
@@ -53,16 +53,16 @@ function createCharacterImage() {
 
     // Animation function
     function animate() {
-    if(level==0){ 
+    if(level==1){ 
         charimg.src = 'assets/taskfailedtammy.png'; // Change the image
     }
-    if(level==1){
+    if(level==2){
         charimg.src = 'assets/tammy.png'; //happiness lvl 0 
     }
-    if(level==2){
+    if(level==3){
         charimg.src = 'assets/tammyneutral.png'; //happiness lvl 2
     }
-    if(level>=3){
+    if(level>=4){
         charimg.src = 'assets/tammyhappy.png';
     }
         position += 5 * direction; // Move based on direction
@@ -231,7 +231,7 @@ function taskEntered(taskName, taskTime) {
     newTaskContainer.classList.add("new-task-container");
 
     // Sets the name of the new task
-    const newTaskName = document.createElement("p");
+    const newTaskName = document.createElement("div");
     newTaskName.textContent = taskName; // Use textContent for <p> elements
     newTaskName.classList.add("new-task-name");
     newTaskContainer.appendChild(newTaskName);
@@ -273,6 +273,7 @@ function taskEntered(taskName, taskTime) {
         clearInterval(timerInterval); // Stop the timer
         incrementProgressBar();
         incrementMoney();
+        upgradeLevel();
         newTaskContainer.remove(); // Remove the task container
     });
 
@@ -301,5 +302,11 @@ function incrementMoney() {
     
     money += 20;
 
-    moneyCount.textContent = `Money: ${money}`; // Using template literals
+    moneyCount.textContent = `Taskbucks: ${money}`; // Using template literals
+}
+
+function upgradeLevel() {
+    const happinessLvl = document.querySelector(".progress-bar-label");
+
+    happinessLvl.textContent = `Happiness LVL: ${level}`;
 }

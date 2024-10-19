@@ -28,6 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
     width: 20vw;
     max-width: 20%;
     height: 100%;
@@ -86,7 +87,7 @@ body {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
-    height: 70vh;
+    height: 74vh;
 }
 
 .screen-image {
@@ -98,4 +99,18 @@ body {
 .money-count {
     background-color: red;
 }
+.add-new-task {
+    display: flex;
+    flex-direction: columns;
+    justify-content: left;
+}
 
+.add-new-task {
+    width: auto;
+    height: auto;
+}
+
+.plus {
+    width: 50%;
+    height: 100%;
+}

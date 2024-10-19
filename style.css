@@ -78,7 +78,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e8f5e9;
+    background-color: #0005a7;
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -86,10 +86,8 @@ body {
 }
 
 .screen-image {
-    object-fit: cover;
-    width: 100%;
-    max-width: 250px;
-    height: 40vh;
+    width: 50%;
+    height: 50vh;
     border-radius: 5px;
 }
 

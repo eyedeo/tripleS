@@ -118,7 +118,7 @@ function updateAccessoryPosition(charimg) {
 // Function to update money display
 function updateMoneyDisplay() {
     const moneyCount = document.querySelector('.money-count');
-    moneyCount.textContent = `Money: ${money}`; // Using template literals
+    moneyCount.textContent = `Taskbucks: ${money}`; // Using template literals
 }
 
 // The rest of the code remains unchanged
@@ -214,7 +214,7 @@ function taskEntered(taskName, taskTime) {
     newTaskContainer.classList.add("new-task-container");
 
     // Sets the name of the new task
-    const newTaskName = document.createElement("p");
+    const newTaskName = document.createElement("div");
     newTaskName.textContent = taskName; // Use textContent for <p> elements
     newTaskName.classList.add("new-task-name");
     newTaskContainer.appendChild(newTaskName);

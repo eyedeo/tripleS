@@ -1,11 +1,20 @@
 let happiness = 0;
 let level = 0;
 let money = 0;
+let accessory; // Variable to hold the accessory image
+let currentAccessory; // Store the current accessory path
+
+// Array of accessory paths
+const accessories = [
+    'assets/illumiaccessory.png',
+    'assets/catssesory.png',
+    'assets/jojossesory.png',
+    'assets/2sumaccessory.png'
+];
 
 // Function to create and append the character image
 function createCharacterImage() {
     const charimg = document.createElement('img');
-    
     charimg.src = 'assets/tammy.png'; // Image path
 
     // Set styling properties
@@ -16,6 +25,19 @@ function createCharacterImage() {
 
     // Append the image to the body
     document.body.appendChild(charimg);
+
+    // Add click event listener for purchasing an accessory
+    charimg.addEventListener('click', () => {
+        if (confirm("Buy random accessory for 40 TaskBucks?")) {
+            if (money >= 40) {
+                money -= 40;
+                updateMoneyDisplay();
+                purchaseAccessory(charimg);
+            } else {
+                alert("You're too broke to afford this.");
+            }
+        }
+    });
 
     // Animation variables
     let position = 650; // Initial position
@@ -59,7 +81,58 @@ function createCharacterImage() {
     }
 
     animate(); // Start the animation
-};
+}
+
+// Function to create and manage accessories
+function purchaseAccessory(charimg) {
+    if (accessory) {
+        accessory.remove(); // Remove current accessory if it exists
+        // Add the current accessory path back to the array
+        accessories.push(currentAccessory);
+    }
+
+    // Select a random accessory from the array
+    const randomIndex = Math.floor(Math.random() * accessories.length);
+    currentAccessory = accessories.splice(randomIndex, 1)[0]; // Remove it from the array
+
+    accessory = document.createElement('img');
+    accessory.src = currentAccessory; // Use the random accessory path
+    accessory.style.position = 'fixed';
+    accessory.style.left = '45%'; // Match the charimg's position
+    accessory.style.top = '35%'; // Match the charimg's position
+    accessory.style.height = '10%'; // Adjust size as needed
+
+    document.body.appendChild(accessory);
+    updateAccessoryPosition(charimg);
+}
+
+// Function to update the accessory position
+function updateAccessoryPosition(charimg) {
+    requestAnimationFrame(function followCharacter() {
+        accessory.style.left = charimg.style.left;
+        accessory.style.top = charimg.style.top;
+        requestAnimationFrame(followCharacter);
+    });
+}
+
+// Function to update money display
+function updateMoneyDisplay() {
+    const moneyCount = document.querySelector('.money-count');
+    moneyCount.textContent = `Money: ${money}`; // Using template literals
+}
+
+// The rest of the code remains unchanged
+
+// Function to initialize the page
+function initializePage() {
+    createCharacterImage(); // Create the character image
+    initializeEventListeners(); // Initialize event listeners
+}
+
+// Run the initializePage function when the page loads
+window.onload = initializePage;
+
+
 
 // Function to create a new task input box
 function createNewTaskInput() {

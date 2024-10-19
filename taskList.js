@@ -15,11 +15,11 @@ const accessories = [
 // Function to create and append the character image
 function createCharacterImage() {
     const charimg = document.createElement('img');
-    if(level<2){ 
-        charimg.src = 'assets/tammy.png'; //happiness lvl 0 
+     if(level==0){ 
+        charimg.src = 'assets/taskfailedtammy.png'; // Change the image
     }
-    if(level==2){
-        charimg.src = 'assets/tammyneutral.png'; //happiness lvl 2
+    if(level==1){
+        charimg.src = 'assets/tammy.png'; //happiness lvl 0 
     }
     if(level>=3){
         charimg.src = 'assets/tammyhappy.png'; //happiness lvl 3
@@ -53,7 +53,10 @@ function createCharacterImage() {
 
     // Animation function
     function animate() {
-    if(level<2){ 
+    if(level==0){ 
+        charimg.src = 'assets/taskfailedtammy.png'; // Change the image
+    }
+    if(level==1){
         charimg.src = 'assets/tammy.png'; //happiness lvl 0 
     }
     if(level==2){
@@ -86,7 +89,6 @@ function createCharacterImage() {
         position = 650; // Reset position to initial
         charimg.style.left = position + 'px'; // Update left position
         charimg.style.transform = direction === 1 ? 'scaleX(1)' : 'scaleX(-1)'; // Ensure the image is facing the current direction
-        charimg.src = 'assets/taskfailedtammy.png'; // Change the image
 
         // Wait for 5 seconds, then restart the animation
         setTimeout(() => {

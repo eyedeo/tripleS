@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 80%;
-    background-color: aquamarine;
+    background-color: turquoise;
     padding: 20px;
     user-select: none;
     margin-top: 20px;
@@ -53,6 +53,7 @@ body {
     border-radius: 5px;
     text-align: center;
     user-select: none;
+    color:blue;
 }
 
 .tasks-container {
@@ -86,14 +87,19 @@ body {
     margin-top: 10px;
     width: auto;
     height: auto;
+    color: blue;
+    border-radius: 5px;
+    border-color: blue;
+    background-color: #00000;
 }
 
 .task-input-container {
-    background-color: red;
+    background-color:blue; 
+    border-radius: 195px;
     padding: 30px;
     margin-top: 10px;
     display: flex;
-    width: 20vw;
+    width: 17vw;
 }
 
 .task-name {
@@ -136,7 +142,7 @@ body {
 }
 
 .progress-bar-label {
-    background-color: red;
+    color:white;
     width: 100%; /* Optional: makes the label the same width as the progress bar */
     text-align: center; /* Center the label text */
 }
@@ -155,29 +161,31 @@ body {
 }
 
 .money-count {
-    background-color: red;
     width: 20%;
+    color:white;
 }
 
 .new-task-container {
-    background-color: blue;
+    background-color: #597ccf;
+    border-radius: 5%;
+    border-style:solid;
+    border-color:blue;
     padding: 30px;
     margin-top: 10px;
     display: flex;
     justify-content: space-between; /* Space out children */
     align-items: center; /* Center align items vertically */
-    width: 20vw; 
+    width: 15vw; 
 }
 
 .new-task-timer {
     margin-left: 10px; /* Optional: Add space between task name and timer */
     font-size: 18px; /* Adjust the font size as needed */
-    color: black; /* Change the color for visibility */
-    background-color: red;
+    color: blue; /* Change the color for visibility */
 }
 
 .new-task-name {
-    background-color: red;
+    color: blue;
 }
 
 .new-check-button {

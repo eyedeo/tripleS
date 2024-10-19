@@ -78,7 +78,7 @@ function createNewTaskInput() {
     taskName.type = 'text';
     taskName.placeholder = "Task name:";
     taskTime.type = 'text';
-    taskTime.placeholder = "Time limit (minutes):";
+    taskTime.placeholder = "Time limit (mins):";
 
     // Add event listener for Enter key on taskName
     taskName.addEventListener('keydown', function(event) {

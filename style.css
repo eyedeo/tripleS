@@ -43,6 +43,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
+    padding: 10px;
 }
 
 .screen-container {
@@ -131,3 +132,4 @@ body {
     color: white;
     user-select: none;
 }
+

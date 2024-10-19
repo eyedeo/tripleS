@@ -132,8 +132,8 @@ function taskEntered(taskName, taskTime) {
     const taskInputContainer = document.querySelector('.task-input-container');
     const taskContainer = document.querySelector('.tasks-container');
     const button = document.querySelector('.add-new-task');
-
     const newTaskContainer = document.createElement('div');
+
     newTaskContainer.classList.add("new-task-container");
 
     // Sets the name of the new task
@@ -146,6 +146,12 @@ function taskEntered(taskName, taskTime) {
     const timerElement = document.createElement("div");
     timerElement.classList.add("new-task-timer");
     newTaskContainer.appendChild(timerElement);
+
+    // Create the check button
+    const checkButton = document.createElement("button");
+    checkButton.classList.add("new-check-button");
+    checkButton.textContent = "✔"; // Add text or icon to the button
+    newTaskContainer.appendChild(checkButton);
 
     // Convert taskTime to seconds if necessary (assuming taskTime is in minutes)
     let countdownTime = taskTime * 60; // Convert minutes to seconds
@@ -168,6 +174,12 @@ function taskEntered(taskName, taskTime) {
     // Update the timer every second
     const timerInterval = setInterval(updateTimer, 1000);
     
+    // Add click event listener to the check button
+    checkButton.addEventListener('click', () => {
+        clearInterval(timerInterval); // Stop the timer
+        newTaskContainer.remove(); // Remove the task container
+    });
+
     taskInputContainer.remove(); // Removes the input container
     taskContainer.insertBefore(newTaskContainer, button);
 }

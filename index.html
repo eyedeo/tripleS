@@ -22,14 +22,16 @@
                 <img class="plus" src="assets/plus.png" alt="Plus">
             </div>
         </button>
-        <input type="text", class="task-input", placeholder="Input Task", hidden></input>
     </div>
     
     <div class="screen-container">
-        <div class="screen-title-container">
+        <div class="title-container">
             <div class="title-box">
-                <progress></progress>
-                <img src="assets/tmtitle.png" id="gametitle">
+                <div class="progress-bar-container">
+                    <label class="progress-bar-label">Happiness level</label>
+                    <progress class="progress-bar", id="progress-bar", value=0></progress>
+                </div>
+                <img src="assets/tmtitle.png", class="game-title", id="game-title">
 
                 <div class="money-count">
                     <p>Money Count: </p>

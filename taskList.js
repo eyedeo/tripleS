@@ -12,7 +12,6 @@ function createCharacterImage() {
 
     // Append the image to the body
     document.body.appendChild(charimg);
-<<<<<<< HEAD
 
     // Animation variables
     let position = 650; // Initial position
@@ -58,9 +57,6 @@ function createCharacterImage() {
 
     animate(); // Start the animation
 };
-=======
-}
->>>>>>> refs/remotes/origin/main
 
 // Function to create a new task input box
 function createNewTaskInput() {

@@ -2,7 +2,7 @@ const screenimg = document.querySelector(".screen-image") // img in the screen
 
 const title = document.querySelector(".Title-Box") // title box
 
-const tasks = document.querySelectorAll(".task-box") // all the task elements
+const tasks = document.querySelectorAll(".task-box") // all the task elementss
 
 let buttons = document.querySelectorAll(".button") // array for buttons which is dynamic and will change
 const buttoncontainer = document.querySelector(".buttons-container") // container for mini-game buttons

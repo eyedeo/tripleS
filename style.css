@@ -11,43 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-.task-list-title {
-    font-size: 24px;
-    width: 100%;
-    max-width: 20vw;
-    background-color: #ffffff;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    user-select: none;
-}
-
-
-.tasks-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 20vw;
-    max-width: 20%;
-    height: 100%;
-    background-color: #f8f9fa;
-    user-select: none;
-}
-
-.task-box {
-    
-    width: 20vw;
-    max-width: 80%;
-    background-color: #ffffff;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    padding: 10px;
-}
-
 .screen-container {
     height: 100vh;
     display: flex;
@@ -61,24 +24,7 @@ body {
     gap: 20px; /* Adds space between flex children */
 }
 
-.title-box {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    align-items: center;
-    background-color: #0215a3;
-    text-align: center;
-    font-size: 24px;
-    margin: auto;
-    font-weight: bold;
-    border-radius: 5px;
-    height: 20vh;
-}
 
-#gametitle {
-    width: 30%;
-    height: 100%;
-}
 
 .screen {
     display: flex;
@@ -98,15 +44,47 @@ body {
     height: 100%;
     border-radius: 5px;
 }
-
-.money-count {
-    background-color: red;
-    width:20%;
+.task-list-title {
+    font-size: 24px;
+    width: 100%;
+    max-width: 20vw;
+    background-color: #ffffff;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
 }
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 20vw;
+    max-width: 20%;
+    height: 100%;
+    background-color: #f8f9fa;
+    user-select: none;
+    
+}
+
+.task-box {
+    width: 20vw;
+    max-width: 80%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
 .add-new-task {
     display: flex;
     flex-direction: columns;
     justify-content: left;
+    margin-top: 10px;
     width: auto;
     height: auto;
 }
@@ -114,7 +92,52 @@ body {
 .plus-container {
     padding: 10px;
 }
+
 .plus {
     max-width: 20px;
     max-height: 20px;
+}
+
+.title-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Ensures the space between items is distributed */
+    background-color: #0215a3;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px;
+    height: 20vh;
+    padding: 0 10px; /* Add some padding for spacing */
+}
+
+.progress-bar-container {
+    width: 30%; /* Adjust width to fit all elements */
+    display: flex;
+    flex-direction: column; /* Change to column to stack the label above the bar */
+    align-items: center; /* Center align the label and progress bar */
+}
+
+.progress-bar-label {
+    background-color: red;
+    width: 100%; /* Optional: makes the label the same width as the progress bar */
+    text-align: center; /* Center the label text */
+}
+
+.progress-bar {
+    height: 60px;
+    width: 100%;
+}
+
+.game-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+}
+
+.money-count {
+    background-color: red;
+    width: 20%;
 }

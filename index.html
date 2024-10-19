@@ -1,51 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Web Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction:row;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .tasks-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 10vw;
+            height: 100%;
+            background-color: #f8f9fa;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .task-box {
+            width: 80%;
+            background-color: #ffffff;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .Buttons-Screen-Container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 80%;
+            background-color: aquamarine;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .screen-title-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+        .Title-Box {
+            background-color: #5fcf80;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            color: white;
+        }
+        .Screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e8f5e9;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .screen-image {
+            object-fit: cover;
+            width: 100%;
+            max-width: 250px;
+            border-radius: 5px;
+        }
+        .button-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .button {
+            padding: 10px;
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ff7518;
+        }
+    </style>
 </head>
-<style>
-    body{
-        display: flex;
-    }
-    .task-container{
-        background-color: aliceblue;
-        height: 100%;
-        width: 20%;
-        display: flex;
-        flex-direction: column;
-    }
-    .Buttons-Screen-Container{
-        background-color: aquamarine;
-        height: 100%;
-        width: 80%;
-        display: flex;
-    }
-</style>
 <body>
     <div class="tasks-container">
-        <div class = "task-box" id = "task-1">
-            <p> task 1</p>
+        <div class="task-box" id="task-1">
+            <p>Task 1: Finish the report</p>
         </div>
-        <div class = "task-box" id = "task-2">
-            <p> task 2</p>
+        <div class="task-box" id="task-2">
+            <p>Task 2: Attend team meeting</p>
         </div>
-        <div class = "task-box" id = "task-3">
-            <p> task 3</p>
+        <div class="task-box" id="task-3">
+            <p>Task 3: Code review</p>
         </div>
     </div>
+    
     <div class="Buttons-Screen-Container">
-        <div class = "screen-title-container">
+        <div class="screen-title-container">
             <div class="Title-Box">
-
+                <p>Task Overview</p>
             </div>
-            <div class = "Screen">
-
+            <div class="Screen">
+                <img class="screen-image" src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="Task Image">
             </div>
         </div>
-        <div class = "button-box">
-            <div class = "buttons-container">
-
+        <div class="button-box">
+            <div class="buttons-container">
+                <button class="button">Start Task</button>
+                <button class="button">Pause Task</button>
+                <button class="button">Complete Task</button>
             </div>
         </div>
     </div>

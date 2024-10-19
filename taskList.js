@@ -59,7 +59,7 @@ function createCharacterImage() {
 
 // Function to create a new task input box
 function createNewTaskInput() {
-    let existingContainer = document.querySelector('.new-task-container');
+    let existingContainer = document.querySelector('.task-input-container');
     
     if (existingContainer) {
         // If it exists, return it without creating a new one
@@ -67,12 +67,11 @@ function createNewTaskInput() {
     }
 
     // Create a new task container
-    const newTaskContainer = document.createElement('div');
-    
+    const taskInputContainer = document.createElement('div');
     const taskName = document.createElement('input'); 
     const taskTime = document.createElement('input'); 
     
-    newTaskContainer.classList.add("new-task-container");
+    taskInputContainer.classList.add("task-input-container");
     taskName.classList.add("task-name");
     taskTime.classList.add("task-time");
 
@@ -95,10 +94,10 @@ function createNewTaskInput() {
         }
     });
 
-    newTaskContainer.appendChild(taskName);
-    newTaskContainer.appendChild(taskTime); 
+    taskInputContainer.appendChild(taskName);
+    taskInputContainer.appendChild(taskTime); 
 
-    return newTaskContainer;
+    return taskInputContainer;
 }
 
 // Function to add the new task input box to the DOM
@@ -130,22 +129,45 @@ function initializePage() {
 window.onload = initializePage;
 
 function taskEntered(taskName, taskTime) {
-    const newTaskContainer = document.querySelector('.new-task-container');
+    const taskInputContainer = document.querySelector('.task-input-container');
     const taskContainer = document.querySelector('.tasks-container');
     const button = document.querySelector('.add-new-task');
 
-    const task = document.createElement('div');
-    task.classList.add("new-task");
+    const newTaskContainer = document.createElement('div');
+    newTaskContainer.classList.add("new-task-container");
 
-    // Create a <p> element instead of a <textarea>
+    // Sets the name of the new task
     const newTaskName = document.createElement("p");
     newTaskName.textContent = taskName; // Use textContent for <p> elements
-    
     newTaskName.classList.add("new-task-name");
+    newTaskContainer.appendChild(newTaskName);
 
-    task.appendChild(newTaskName);
+    // Create countdown timer elements
+    const timerElement = document.createElement("div");
+    timerElement.classList.add("new-task-timer");
+    newTaskContainer.appendChild(timerElement);
 
-    newTaskContainer.remove(); // Removes the input container
+    // Convert taskTime to seconds if necessary (assuming taskTime is in minutes)
+    let countdownTime = taskTime * 60; // Convert minutes to seconds
 
-    taskContainer.insertBefore(task, button);
+    // Function to update the timer display
+    const updateTimer = () => {
+        const minutes = Math.floor(countdownTime / 60);
+        const seconds = countdownTime % 60;
+        
+        timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        if (countdownTime > 0) {
+            countdownTime--;
+        } else {
+            clearInterval(timerInterval);
+            newTaskContainer.remove(); 
+        }
+    };
+
+    // Update the timer every second
+    const timerInterval = setInterval(updateTimer, 1000);
+    
+    taskInputContainer.remove(); // Removes the input container
+    taskContainer.insertBefore(newTaskContainer, button);
 }

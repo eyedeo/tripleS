@@ -88,13 +88,12 @@ body {
     height: auto;
 }
 
-.new-task-container {
+.task-input-container {
     background-color: red;
     padding: 30px;
     margin-top: 10px;
     display: flex;
     width: 20vw;
-
 }
 
 .task-name {
@@ -160,6 +159,24 @@ body {
     width: 20%;
 }
 
-.new-task {
-    
+.new-task-container {
+    background-color: blue;
+    padding: 30px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between; /* Space out children */
+    align-items: center; /* Center align items vertically */
+    width: 20vw; 
 }
+
+.new-task-timer {
+    margin-left: 10px; /* Optional: Add space between task name and timer */
+    font-size: 18px; /* Adjust the font size as needed */
+    color: black; /* Change the color for visibility */
+    background-color: red;
+}
+
+.new-task-name {
+    background-color: red;
+}
+

@@ -269,6 +269,7 @@ function taskEntered(taskName, taskTime) {
         } else {
             clearInterval(timerInterval);
             newTaskContainer.remove(); 
+            decreaseHappiness();
         }
     };
 
@@ -316,4 +317,24 @@ function upgradeLevel() {
     const happinessLvl = document.querySelector(".progress-bar-label");
 
     happinessLvl.textContent = `Happiness LVL: ${level}`;
+}
+
+function decreaseHappiness() {
+    const progressBar = document.querySelector('.progress-bar');
+    
+    if(progressBar.value > 0)
+    {
+        progressBar.value -= 1;
+    }
+    else 
+    {
+        if(level > 1)
+        {
+            level -= 1;
+            progressBar.value = 2;
+            happiness -= 2;
+            upgradeLevel();
+        }
+
+    }
 }

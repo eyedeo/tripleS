@@ -17,15 +17,20 @@ const accessories = [
 // Function to create and append the character image
 function createCharacterImage() {
     const charimg = document.createElement('img');
-     if(level==0){ 
+     if(level==1){ 
         charimg.src = 'assets/taskfailedtammy.png'; // Change the image
     }
-    if(level==1){
+    if(level==2){
         charimg.src = 'assets/tammy.png'; //happiness lvl 0 
     }
-    if(level>=3){
-        charimg.src = 'assets/tammyhappy.png'; //happiness lvl 3
+    if(level==3){
+        charimg.src = 'assets/tammyneutral.png'; //happiness lvl 2
     }
+    if(level>=4){
+        charimg.src = 'assets/tammyhappy.png';
+    }
+
+
     // Set styling properties
     charimg.style.position = 'fixed';
     charimg.style.left = '45%';
@@ -137,7 +142,7 @@ function updateAccessoryPosition(charimg) {
 // Function to update money display
 function updateMoneyDisplay() {
     const moneyCount = document.querySelector('.money-count');
-    moneyCount.textContent = `Money: ${money}`; // Using template literals
+    moneyCount.textContent = `TaskBucks: ${money}`; // Using template literals
 }
 
 // The rest of the code remains unchanged
@@ -304,7 +309,7 @@ function incrementMoney() {
     
     money += 20;
 
-    moneyCount.textContent = `Taskbucks: ${money}`; // Using template literals
+    moneyCount.textContent = `TaskBucks: ${money}`; // Using template literals
 }
 
 function upgradeLevel() {
